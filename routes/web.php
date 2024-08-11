@@ -21,7 +21,7 @@ Route::get('/', function () {
 
 
 Route::prefix('/todolist')->name('todolist.')->group(function (){
-    Route::get('/', function() {
+    Route::get('/', [\App\Http\Controllers\ToDoListController::class, 'Get_Tasks'])->name('index');
 
         //créer une nouvelle todo ou \App\Models\ToDoList::Create([**val**])
         // $todolist = new \App\Models\ToDoList();
@@ -38,8 +38,7 @@ Route::prefix('/todolist')->name('todolist.')->group(function (){
         // $todolist->titre = "new titre";
         // $todolist->save();
     
-        return \App\Models\ToDoList::all();
+        // return \App\Models\ToDoList::all();
 
         // return 'Emplacement ToDoList';
-    })->name('index');
 });
