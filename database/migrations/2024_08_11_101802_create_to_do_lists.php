@@ -11,12 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('to_do_list', function (Blueprint $table) {
+        Schema::create('to_do_lists', function (Blueprint $table) {
             $table->id();
             $table->string('titre');
             $table->string('contenu');
             $table->enum('priorité', ['faible', 'moyenne', 'haute']);
-            $table->date('date');
             $table->boolean('validé');
             $table->timestamps();
         });
@@ -27,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('to_do_list');
+        Schema::dropIfExists('to_do_lists');
     }
 };

@@ -22,6 +22,24 @@ Route::get('/', function () {
 
 Route::prefix('/todolist')->name('todolist.')->group(function (){
     Route::get('/', function() {
-        return 'Emplacement ToDoList';
+
+        //créer une nouvelle todo ou \App\Models\ToDoList::Create([**val**])
+        // $todolist = new \App\Models\ToDoList();
+        // $todolist->titre = "deuxième ToDo";
+        // $todolist->contenu = "faire le todolist";
+        // $todolist->priorité = "faible";
+        // $todolist->validé = false;
+        // $todolist->save();
+
+        //modifie une todo
+        //récupère la todo en fonction de l'id
+        // $todolist = \App\Models\ToDoList::find(1);
+        // //modifier ce que l'on souhaite
+        // $todolist->titre = "new titre";
+        // $todolist->save();
+    
+        return \App\Models\ToDoList::all();
+
+        // return 'Emplacement ToDoList';
     })->name('index');
 });
