@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ToDoListController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,8 +21,8 @@ Route::get('/', function () {
 });
 
 
-Route::prefix('/todolist')->name('todolist.')->group(function (){
-    Route::get('/', [\App\Http\Controllers\ToDoListController::class, 'Get_Tasks'])->name('index');
+Route::prefix('/todolist')->name('todolist.')->controller(ToDoListController::class)->group(function (){
+    Route::get('/', 'Get_Tasks')->name('index');
 
         //créer une nouvelle todo ou \App\Models\ToDoList::Create([**val**])
         // $todolist = new \App\Models\ToDoList();
