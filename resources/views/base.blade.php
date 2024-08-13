@@ -6,8 +6,8 @@
     <title>@yield('titre')</title>
     @vite('resources/css/app.css')
 </head>
-<body>
-    <div class="container">
+<body class="bg-white dark:bg-gray-900">
+    <div class="mx-8 content-center">
         @yield('content')
     </div>
 </body>
