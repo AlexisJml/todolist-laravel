@@ -165,5 +165,28 @@
     </table> 
 </div>
 
-{{ $completed }}
+<H1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white"> Liste des tâches completées</H1>
+<div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 overflow-hidden rounded-t-lg">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+                <th scope="col" class="px-6 py-3">ID</th>
+                <th scope="col" class="px-6 py-3">Titre</th>
+                <th scope="col" class="px-6 py-3">Contenu</th>
+                <th scope="col" class="px-6 py-3">Valider le</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($completed as $taskcomplete)
+                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                        <td class="px-6 py-4">{{ $taskcomplete->id }}</td>
+                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{ $taskcomplete->titre }}</th>
+                        <td class="px-6 py-4">{{ $taskcomplete->contenu }}</td>
+                        <td class="px-6 py-4">{{ $taskcomplete->updated_at }}</td>
+                    </tr>
+            @endforeach
+        </tbody>
+    </table>
+</div>
+
 @endsection

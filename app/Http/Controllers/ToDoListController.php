@@ -12,4 +12,8 @@ class ToDoListController extends Controller
             'completed' => \App\Models\ToDoList::where('validé', true)->get()
         ]);
     }
+
+    public function Add_Task () {
+        
+    }
 }
