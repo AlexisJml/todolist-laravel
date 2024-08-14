@@ -8,7 +8,8 @@ class ToDoListController extends Controller
 {
     public function Get_Tasks () {
         return view('ToDoList.index', [
-            'tasks' => \App\Models\ToDoList::all()
+            'tasks' => \App\Models\ToDoList::where('validé', false)->get(),
+            'completed' => \App\Models\ToDoList::where('validé', true)->get()
         ]);
     }
 }
