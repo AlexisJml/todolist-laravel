@@ -23,6 +23,7 @@ Route::get('/', function () {
 
 Route::prefix('/todolist')->name('todolist.')->controller(ToDoListController::class)->group(function (){
     Route::get('/', 'Get_Tasks')->name('index');
+    Route::post('/add-task', 'Add_Task')->name('addTask');
 
         //créer une nouvelle todo ou \App\Models\ToDoList::Create([**val**])
         // $todolist = new \App\Models\ToDoList();

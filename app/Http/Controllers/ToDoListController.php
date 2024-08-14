@@ -26,10 +26,10 @@ class ToDoListController extends Controller
         $task->titre = $validatedData['titre'];
         $task->contenu = $validatedData['contenu'];
         $task->priorité = $validatedData['priorité'];
-        $task->timestamps();
+        $task->validé = false;
         $task->save(); 
 
         //Rafraichi la page
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Tâche ajoutée avec succès!');
     }
 }
