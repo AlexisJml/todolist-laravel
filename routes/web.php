@@ -24,14 +24,7 @@ Route::get('/', function () {
 Route::prefix('/todolist')->name('todolist.')->controller(ToDoListController::class)->group(function (){
     Route::get('/', 'Get_Tasks')->name('index');
     Route::post('/add-task', 'Add_Task')->name('addTask');
-
-        //créer une nouvelle todo ou \App\Models\ToDoList::Create([**val**])
-        // $todolist = new \App\Models\ToDoList();
-        // $todolist->titre = "deuxième ToDo";
-        // $todolist->contenu = "faire le todolist";
-        // $todolist->priorité = "faible";
-        // $todolist->validé = false;
-        // $todolist->save();
+    Route::delete('/delete-task/{id}', 'Delete_Task')->name('deleteTask');
 
         //modifie une todo
         //récupère la todo en fonction de l'id
@@ -39,8 +32,4 @@ Route::prefix('/todolist')->name('todolist.')->controller(ToDoListController::cl
         // //modifier ce que l'on souhaite
         // $todolist->titre = "new titre";
         // $todolist->save();
-    
-        // return \App\Models\ToDoList::all();
-
-        // return 'Emplacement ToDoList';
 });

@@ -111,7 +111,9 @@
                                         </button>
                                     </div>
                                     <!-- Body -->
-                                    <form class="p-4 md:p-5">
+                                    <form class="p-4 md:p-5" action="{{ route('todolist.deleteTask', $task->id) }}" method="post">
+                                        @csrf
+                                        @method('DELETE')
                                         <div class="grid gap-4 mb-4">
                                             <p>Voulez-vous vraiment supprimer cette tâche?</p>
                                         </div>

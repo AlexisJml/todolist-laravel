@@ -32,4 +32,17 @@ class ToDoListController extends Controller
         //Rafraichi la page
         return redirect()->back()->with('success', 'Tâche ajoutée avec succès!');
     }
+
+    public function Delete_Task (Int $id) {
+    $task = ToDoList::find($id);
+
+    if ($task) {
+        $task->delete();
+        //Rafraichi la page
+        return redirect()->back()->with('delete', 'Tâche supprimée avec succès!');
+    } else {
+        //Rafraichi la page
+        return redirect()->back()->with('error', 'Tâche non trouvée!');
+    }
+  }
 }
