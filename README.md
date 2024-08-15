@@ -19,9 +19,6 @@ yarn install
 
 Laravel permet d'utiliser tout type de base de données, donc c'est à vous de le onfigurer et de modifier le .env.
 
-<table>
-<tr>test<\tr>
-
 ## Compilation
 
 Pour pouvoir lancer le projet, veuillez à exécuter:
