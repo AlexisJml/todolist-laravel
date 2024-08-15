@@ -1,6 +1,6 @@
 ## À propos
 
-Ce projet de To Do List a été fait avec le framework Laravel pour découvrir et commencer à pratiquer sur ce framework, qui contient aussi Tailwind CSS.
+Ce projet de To Do List a été fait avec le framework Laravel pour découvrir et commencer à pratiquer sur ce framework, il contient aussi Tailwind CSS.
 
 ## Initialisation
 
@@ -19,6 +19,8 @@ yarn install
 
 Laravel permet d'utiliser tout type de base de données, donc c'est à vous de le onfigurer et de modifier le .env.
 
+<table>
+<tr>test<\tr>
 
 ## Compilation
 
