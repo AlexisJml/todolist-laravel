@@ -4,12 +4,12 @@ Ce projet de To Do List a été fait avec le framework Laravel pour découvrir e
 
 ## Initialisation
 
-*Veuillez installer les dépendances PHP avec Composer:
+* Veuillez installer les dépendances PHP avec Composer:
 ```
 composer install
 ```
 
-*Veuillez installer les dépendances JavaSript avec NPM ou Yarn:
+* Veuillez installer les dépendances JavaSript avec NPM ou Yarn:
 ```
 npm install
 ```
