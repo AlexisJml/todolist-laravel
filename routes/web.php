@@ -26,4 +26,5 @@ Route::prefix('/todolist')->name('todolist.')->controller(ToDoListController::cl
     Route::post('/add-task', 'Add_Task')->name('addTask');
     Route::delete('/delete-task/{id}', 'Delete_Task')->name('deleteTask');
     Route::put('/modify-task/{id}', 'Modify_Task')->name('modifyTask');
+    Route::put('/validate-task/{id}', 'Validate_Task')->name('validateTask');
 });

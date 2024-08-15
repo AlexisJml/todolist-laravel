@@ -62,4 +62,15 @@ class ToDoListController extends Controller
             return redirect()->back()->with('error', 'Tâche non trouvée!');
         }
     }
+
+    public function Validate_Task (Int $id) {
+        $task = ToDoList::find($id);
+        if ($task) {
+            $task->validé = true;
+            $task->save();
+            return redirect()->back()->with('validate', 'Tâche validé avec succès!');
+        } else {
+            return redirect()->back()->with('error', 'Tâche non trouvée!');
+        }
+    }
 }
