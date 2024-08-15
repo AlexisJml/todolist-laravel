@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\ToDoList;
+use Illuminate\Support\Facades\Log;
 
 class ToDoListController extends Controller
 {
@@ -34,15 +35,31 @@ class ToDoListController extends Controller
     }
 
     public function Delete_Task (Int $id) {
-    $task = ToDoList::find($id);
+        $task = ToDoList::find($id);
 
-    if ($task) {
-        $task->delete();
-        //Rafraichi la page
-        return redirect()->back()->with('delete', 'Tâche supprimée avec succès!');
-    } else {
-        //Rafraichi la page
-        return redirect()->back()->with('error', 'Tâche non trouvée!');
+        if ($task) {
+            $task->delete();
+            //Rafraichi la page
+            return redirect()->back()->with('delete', 'Tâche supprimée avec succès!');
+        } else {
+            //Rafraichi la page
+            return redirect()->back()->with('error', 'Tâche non trouvée!');
+        }
     }
-  }
+
+    public function Modify_Task (Request $request, Int $id) {
+        $validatedData = $request->validate([
+            'titre' => 'required|string|max:255',
+            'contenu' => 'required|string',
+            'priorité' => 'required|in:faible,moyenne,haute',
+        ]);
+
+        $task = ToDoList::find($id);
+        if ($task) {
+            $task->update($validatedData);
+            return redirect()->back()->with('modify', 'Tâche modifiée avec succès!');
+        } else {
+            return redirect()->back()->with('error', 'Tâche non trouvée!');
+        }
+    }
 }

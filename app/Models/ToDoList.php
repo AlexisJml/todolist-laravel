@@ -13,6 +13,7 @@ class ToDoList extends Model
     protected $fillable = [
         'titre',
         'contenu',
-        'priorité'
+        'priorité',
+        'validé'
     ];
 }

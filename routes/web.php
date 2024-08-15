@@ -25,11 +25,5 @@ Route::prefix('/todolist')->name('todolist.')->controller(ToDoListController::cl
     Route::get('/', 'Get_Tasks')->name('index');
     Route::post('/add-task', 'Add_Task')->name('addTask');
     Route::delete('/delete-task/{id}', 'Delete_Task')->name('deleteTask');
-
-        //modifie une todo
-        //récupère la todo en fonction de l'id
-        // $todolist = \App\Models\ToDoList::find(1);
-        // //modifier ce que l'on souhaite
-        // $todolist->titre = "new titre";
-        // $todolist->save();
+    Route::put('/modify-task/{id}', 'Modify_Task')->name('modifyTask');
 });
